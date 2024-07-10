@@ -3,14 +3,60 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link href="style.css" rel="stylesheet" />
 		<title>Pixeladas de arte</title>
 	</head>
-	<body>
+	<body x-data="{ open: false }">
+		<div
+			class="drawer-fondo"
+			@click="open = false"
+			x-show="open"
+			x-transition
+		></div>
+		<div class="drawer" x-show="open" x-transition>
+			<svg
+				class="close"
+				@click="open = false"
+				xmlns="http://www.w3.org/2000/svg"
+				fill="none"
+				viewBox="0 0 24 24"
+				stroke-width="1.5"
+				stroke="currentColor"
+				class="size-6"
+			>
+				<path
+					stroke-linecap="round"
+					stroke-linejoin="round"
+					d="M6 18 18 6M6 6l12 12"
+				/>
+			</svg>
+			<nav class="menu-drawer">
+				<ul class="lista-menu-drawer">
+					<li><a href="#inicio">Inicio</a></li>
+					<li><a href="#history">Historia</a></li>
+					<li><a href="#estilos">Estilos</a></li>
+					<li><a href="#galeria_de_estilos">Galeria</a></li>
+					<li class="login-drawer"><a href="login/index.html">Únete</a></li>
+				</ul>
+			</nav>
+		</div>
 		<header id="inicio">
-			<h1>Pixeladas de Arte</h1>
-			<p>explorando el mundo de la pintura</p>
-
-			<nav class="menu">
+			<div class="content-encabezado">
+				<h1>Pixeladas de Arte</h1>
+				<p>explorando el mundo de la pintura</p>
+				<div class="raya"></div>
+			</div>
+			<button class="btn-menu" @click="open = true">
+				<svg
+					xmlns="http://www.w3.org/2000/svg"
+					width="1em"
+					height="1em"
+					viewBox="0 0 24 24"
+				>
+					<path fill="#000000" d="M3 18v-2h18v2zm0-5v-2h18v2zm0-5V6h18v2z" />
+				</svg>
+			</button>
+			<nav class="menu" x-cloak>
 				<ul class="lista-menu">
 					<li><a href="#inicio">Inicio</a></li>
 					<li><a href="#history">Historia</a></li>
@@ -32,29 +78,32 @@
 			</div>
 		</header>
 		<section id="history">
-			<div class="content-img-history">
-				<img
-					class="img-history"
-					src="imagenes/segunda.img12.jpg"
-					alt="«LA JOVEN DE LA PERLA». JOHANNES VERMEER (1665)"
-				/>
-			</div>
-			<div class="content-history">
-				<h2>Historia</h2>
-				<p>
-					La historia del arte abarca miles de años de creación humana, desde
-					las pinturas rupestres prehistóricas hasta las formas de arte
-					contemporáneo. Se puede dividir en diferentes períodos, como el arte
-					antiguo, el arte medieval, el Renacimiento, el Barroco, el
-					Neoclasicismo, el Romanticismo, el Realismo, el Impresionismo, el
-					Modernismo y el arte contemporáneo. Cada período se caracteriza por
-					estilos artísticos distintos, influenciados por factores culturales,
-					políticos y sociales. El arte ha sido una forma de expresión y
-					comunicación a lo largo de la historia, reflejando las creencias,
-					valores y preocupaciones de las diferentes sociedades. Además, ha
-					evolucionado con avances tecnológicos y cambios en la forma de ver el
-					mundo.
-				</p>
+			<div class="content-wrapper">
+				<div class="content-img-history">
+					<img
+						class="img-history"
+						src="imagenes/segunda.img12.jpg"
+						alt="«LA JOVEN DE LA PERLA». JOHANNES VERMEER (1665)"
+					/>
+				</div>
+				<div class="content-history">
+					<h2>Historia</h2>
+					<div class="raya"></div>
+					<p>
+						La historia del arte abarca miles de años de creación humana, desde
+						las pinturas rupestres prehistóricas hasta las formas de arte
+						contemporáneo. Se puede dividir en diferentes períodos, como el arte
+						antiguo, el arte medieval, el Renacimiento, el Barroco, el
+						Neoclasicismo, el Romanticismo, el Realismo, el Impresionismo, el
+						Modernismo y el arte contemporáneo. Cada período se caracteriza por
+						estilos artísticos distintos, influenciados por factores culturales,
+						políticos y sociales. El arte ha sido una forma de expresión y
+						comunicación a lo largo de la historia, reflejando las creencias,
+						valores y preocupaciones de las diferentes sociedades. Además, ha
+						evolucionado con avances tecnológicos y cambios en la forma de ver
+						el mundo.
+					</p>
+				</div>
 			</div>
 		</section>
 		<main>
@@ -219,5 +268,11 @@
 				</div>
 			</section>
 		</main>
+		<script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+		<script src="./carrusel.js"></script>
+		<script
+			defer
+			src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.1/dist/cdn.min.js"
+		></script>
 	</body>
 </html>
