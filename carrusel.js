@@ -1,3 +1,5 @@
+//probar un cambio
+
 var current = 0;
 	var imagenes = new Array();
 
