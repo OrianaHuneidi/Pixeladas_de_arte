@@ -70,3 +70,7 @@ button {
     height: 21px;
     border: 1px solid #ADADAD;
 }
+
+.error {
+    color: red;
+}

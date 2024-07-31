@@ -20,6 +20,46 @@ p {
 	font-family: Tahoma;
 }
 
+.boton-user {
+	width: 500px;
+	height: 100px;
+}
+
+.content-menu {
+	background-color: hotpink;
+}
+
+.content-opciones-perfil button svg {
+	fill: #aa29ff;
+	width: 55px;
+	height: 50px;
+	margin: 0;
+	justify-content: center;
+	border: none;
+}
+
+.user {
+	background-color: #d8c5ff;
+	border: none;
+	width: 70px;
+	height: 60px;
+    border-radius: 10px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.content-menu button{
+	background-color: #9900ff;
+	color: #fff;
+	border: none;
+	padding: 5px 10px;
+	font-size: 16px;
+	cursor: pointer;
+}
+
+.content-menu button:hover {
+	background-color: #8c0099;
+}
+
 .lista-menu li {
 	font-family: Tahoma;
 	font-size: 25px;
@@ -398,4 +438,22 @@ p {
 	.content-history {
 		order: 1;
 	}
+}
+
+.content-opciones-perfil {
+	z-index: 3000;
+	width: fit-content;
+	position: fixed;
+	right: 10px;
+	top: 10px;
+}
+
+.content-menu {
+	background: rgb(189, 189, 189);
+	position: absolute;
+	text-align: end;
+	display: inline;
+	padding: 10px;
+	right: 0px;
+	top: 23px;
 }
